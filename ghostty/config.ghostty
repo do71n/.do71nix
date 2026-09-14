@@ -1,26 +1,23 @@
-keybind = super+r=reload_config
-shell-integration-features = no-cursor, no-title
-
+font-size = 14
+font-family = "CaskaydiaCove Nerd Font"
+font-style = "medium"
+font-feature = -calt
+theme = noctalia
 
 background-opacity = 0.6
-background-blur-radius = 30
+background-blur = 30
+window-decoration = false
+selection-background = #ffffff
+selection-foreground = #000000
 
-theme = /Applications/Ghostty.app/Contents/Resources/ghostty/themes/rose pine moon
+keybind = super+r=reload_config
 
-background = 000000
-
-#title = 👻
-#macos-titlebar-proxy-icon = hidden
-macos-titlebar-style = hidden
-
-font-family = "Iosevka Term"
-font-style = "medium"
-font-size = 26
+shell-integration-features = no-cursor, no-title
 
 mouse-hide-while-typing = true
 window-save-state = always
 
-#keybind (won't use)
+#keybind (handle by tmux)
 #keybind = ctrl+h=goto_split:left
 #keybind = ctrl+j=goto_split:bottom
 #keybind = ctrl+k=goto_split:top
@@ -34,5 +31,5 @@ window-save-state = always
 #keybind = ctrl+a>n=next_tab
 #keybind = ctrl+a>p=previous_tab
 
-
-
+#mac OS specific
+#macos-titlebar-style = hidden
