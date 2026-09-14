@@ -66,6 +66,7 @@ return {
                 "latex",
                 "qmljs",
                 "qmldir",
+                "nix",
             }
 
             local installed = require("nvim-treesitter.config").get_installed()
