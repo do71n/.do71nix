@@ -7,5 +7,8 @@ return {
     ft = { "markdown", "Avante" },
     opts = {
         file_types = { "markdown", "Avante" },
+        latex = {
+            enabled = false,
+        },
     },
 }
