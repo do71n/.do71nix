@@ -4,4 +4,4 @@ prefix = "vpn"
 glyph = "shield"
 global = false
 command = "printf 'Connect (jp)\tConnect to default region\nDisconnect\tTurn off VPN\n'"
-exec = "case '{selection}' in Connect*) /home/dt/tools/vpn.sh ein ;; Disconnect*) /home/dt/tools/vpn.sh aus ;; esac"
+exec = "case '{selection}' in Connect*) $HOME/tools/vpn.sh ein ;; Disconnect*) $HOME/tools/vpn.sh aus ;; esac"

@@ -407,7 +407,9 @@ capsule_fill = "on_surface_variant"
 
 [widget.bluetooth]
 capsule = true
+capsule_border = "primary"
 capsule_fill = "#190B65"
+capsule_foreground = "on_surface"
 
 [widget.brightness]
 capsule = true
