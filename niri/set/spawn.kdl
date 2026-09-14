@@ -1,13 +1,7 @@
 // Note that running niri as a session supports xdg-desktop-autostart,
 
-// spawn-at-startup "sh" "-c" "waybar > /dev/null 2>&1"
-// spawn-at-startup "awww-daemon"
-// spawn-at-startup "awww" "img" "~/Pictures/wallpaper/cat-left.jpg"
 spawn-at-startup "noctalia"
 spawn-at-startup "fcitx5" "-d"
-// spawn-at-startup "hyprpaper"
-// spawn-at-startup "nm-applet"
-// spawn-at-startup "/usr/lib/polkit-kde-agent-1"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
