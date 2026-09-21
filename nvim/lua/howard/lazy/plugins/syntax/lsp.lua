@@ -87,6 +87,7 @@ return { "neovim/nvim-lspconfig",
                 "ts_ls",
                 "pyright",
                 "texlab",
+                "nil_ls",
             },
         })
 
@@ -175,6 +176,19 @@ return { "neovim/nvim-lspconfig",
         })
 
         --- ======
+        --- Nix
+        --- ======
+        vim.lsp.config("nil_ls", {
+            settings = {
+                -- NOTE: "nil" in brackets because `nil` is a reserved Lua keyword
+                ["nil"] = {
+                    -- nil delegates formatting to an external binary
+                    formatting = { command = { "nixfmt" } },
+                },
+            },
+        })
+
+        --- ======
         --- LaTeX
         --- ======
         vim.lsp.config("texlab", {
@@ -216,6 +230,7 @@ return { "neovim/nvim-lspconfig",
             "pyright",
             "texlab",
             "qmlls",
+            "nil_ls",
         })
 
 

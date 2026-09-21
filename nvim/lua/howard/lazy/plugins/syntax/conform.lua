@@ -18,6 +18,7 @@ return {
             c = { "clang-format" },
             cpp = { "clang-format" },
             lua = { "stylua" },
+            nix = { "nixfmt" },
             -- Example: If you write web or script stuff
             -- python = { "isort", "black" },
             -- javascript = { "prettierd", "prettier", stop_after_first = true },
