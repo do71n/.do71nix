@@ -51,6 +51,9 @@ return {
             vim.keymap.set('n', '<leader>gs', builtin.git_status, { desc = 'Telescope Git status' })
             vim.keymap.set('n', '<leader>sg', function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end)
 
+            -- lsp symobols
+            vim.keymap.set('n', '<leader>ws', builtin.lsp_dynamic_workspace_symbols)
+
             vim.keymap.set('n', '<leader>fcw', function()
                 local word = vim.fn.expand("<cword>")
                 builtin.grep_string({ search = word })

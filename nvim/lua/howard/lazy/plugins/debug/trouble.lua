@@ -13,7 +13,7 @@ return {
 
             -- 2. GLOBAL JUMP NEXT (Works from any window)
             {
-                "<leader>tn",
+                "]t",
                 function()
                     -- This function works even if your cursor is in the editor
                     require("trouble").next({ skip_groups = true, jump = true })
@@ -23,7 +23,7 @@ return {
 
             -- 3. GLOBAL JUMP PREV (Works from any window)
             {
-                "<leader>tp",
+                "[t",
                 function()
                     -- This function works even if your cursor is in the editor
                     require("trouble").prev({ skip_groups = true, jump = true })

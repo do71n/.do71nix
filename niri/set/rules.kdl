@@ -34,8 +34,8 @@ window-rule {
 
 }
 
-// Zen-browser
-window-rule { // Open the Firefox picture-in-picture player as floating by default.
+// Zen-browser picture-in-picture
+window-rule { // Open the zen picture-in-picture player as floating by default.
     match app-id=r#"zen$"# title="^Picture-in-Picture$"
     open-floating true
     default-column-width { fixed 480; }
@@ -45,6 +45,7 @@ window-rule { // Open the Firefox picture-in-picture player as floating by defau
 }
 
 // Ghostty
+workspace "terminal" {}
 window-rule {
     match app-id="com.mitchellh.ghostty"
     draw-border-with-background false
@@ -53,6 +54,8 @@ window-rule {
     background-effect {
         blur true
     }
+
+    open-on-workspace "terminal"
 }
 
 // Floating for quick note windows

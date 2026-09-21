@@ -20,6 +20,7 @@ export FZF_CTRL_T_OPTS="--preview '$_FZF_PREVIEW_CMD'"
 # fzf: reverse-i-search (Ctrl+R)
 export FZF_CTRL_R_OPTS="
   --header='[ 📜 Cmd ]'
+  --preview-window='hidden'
 "
 
 # Custom Widget: Files Excluding Hidden (Ctrl+F)

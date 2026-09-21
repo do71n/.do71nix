@@ -10,7 +10,7 @@ order = [ "main" ]
     margin_edge = 6
     margin_ends = 80
     radius = 18
-    start = [ "group:g6", "media", "group:g5", "group:g4" ]
+    start = [ "workspaces", "media", "group:g5", "group:g4" ]
 
         [[bar.main.capsule_group]]
         enabled = true
@@ -56,13 +56,11 @@ order = [ "main" ]
         opacity = 1.0
         padding = 8.0
 
-        [[bar.main.capsule_group]]
-        enabled = true
-        fill = "surface_variant"
-        id = "g6"
-        members = [ "workspaces" ]
-        opacity = 1.0
-        padding = 8.0
+[calendar]
+enabled = true
+
+[control_center.calendar]
+show_events_card = true
 
 [[control_center.shortcuts]]
 type = "bluetooth"
@@ -348,7 +346,7 @@ background_opacity = 0.99999997764825821
 position = "bottom_right"
 
 [plugins]
-enabled = [ "dotnetrob/cat", "noctalia/bongocat" ]
+enabled = [ "dotnetrob/cat", "noctalia/bongocat", "cleboost/ssh-launcher" ]
 
 [shell]
 app_icon_color = "secondary"
@@ -356,14 +354,18 @@ avatar_path = "/home/dt/Pictures/wallpaper/katze-grun.jpg"
 font_family = "CaskaydiaCove Nerd Font"
 lang = "en"
 niri_overview_type_to_launch_enabled = true
+settings_show_advanced = false
 
     [shell.launcher]
+    app_grid = false
     categories = false
     compact = true
 
+        [shell.launcher.providers.calculator]
+        global = true
+
         [shell.launcher.providers.emoji]
         global = false
-        prefix = "emo"
 
         [shell.launcher.providers.session]
         global = false
@@ -371,9 +373,13 @@ niri_overview_type_to_launch_enabled = true
         [shell.launcher.providers.wallpaper]
         global = false
 
+        [shell.launcher.providers.windows]
+        prefix = ""
+
     [shell.panel]
     clipboard_placement = "attached"
     launcher_placement = "attached"
+    open_near_click_launcher = false
 
 [theme]
 builtin = "Rosé Pine"
@@ -428,6 +434,9 @@ audio_spectrum = true
 enable_scroll = false
 input_devices = [ "/dev/input/by-path/platform-i8042-serio-0-event-kbd" ]
 type = "noctalia/bongocat:cat"
+
+[widget.clipboard]
+enabled = true
 
 [widget.clock]
 capsule = true
@@ -504,5 +513,6 @@ show_condition = false
 show_temperature = false
 
 [widget.workspaces]
-max_label_chars = 3
+display = "name"
+max_label_chars = 4
 style = "focus_hint"
