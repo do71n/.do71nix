@@ -50,8 +50,13 @@
     podman # ..
     distrobox # ..
     qemu_kvm # Virtual machines
+    qemu_full
     wireguard-tools # VPN
     alsa-tools # legacy ALSA sound card support
+    weston # wayland compositor debugger
+    evtest # input device tester
+    bluetui
+    btrfs-progs
   ];
 
   # docker
@@ -124,10 +129,19 @@
   fonts.packages = with pkgs; [
     noto-fonts-cjk-sans
     noto-fonts-emoji-blob-bin
+    corefonts
+    vista-fonts
+    terminus_font
+    dejavu_fonts
+    roboto
+    ubuntu-classic
   ];
 
   services.vaultwarden = { };
   services.mullvad-vpn.enable = true;
+
+  services.hardware.bolt.enable = true;
+  boot.loader.systemd-boot.memtest86.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password\@proxy:port/";

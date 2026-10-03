@@ -12,6 +12,11 @@
     ripgrep
     zoxide
 
+    # coding tools
+    lazydocker
+    lazygit
+    herdr
+
     # Wayland utilities
     libnotify
     pavucontrol # per app audio routing
@@ -20,9 +25,12 @@
 
     # Desktop utilities
     discord
+    claude-code
     freecad
     gimp
     krita
+    mypaint
+    mypaint-brushes1
     obs-studio
     neovide
     spotify
@@ -44,18 +52,6 @@
     zathuraPkgs.zathura_pdf_mupdf
     texliveFull
 
-    # Development and terminal tools
-    arduino-cli
-    cppcheck
-    claude-code
-    distrobox
-    lazydocker
-    lazygit
-    luarocks
-    rustup
-    tree-sitter
-    uv
-    zig
 
     # VPN & Security
     wireguard-tools

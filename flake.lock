@@ -219,12 +219,44 @@
         "type": "github"
       }
     },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1790822859,
+        "narHash": "sha256-VBA0QerzzmL+4wxgtwiCdiLwLpJg2/9xOxhgO3BRJQA=",
+        "rev": "c59305bab2065cfecc4944690d9eedbb56f3a9fa",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1083223.c59305bab206/nixexprs.tar.zst"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
+      }
+    },
+    "noctalia": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "lastModified": 1791018977,
+        "narHash": "sha256-UHAFGbCYxT5NKcN38SAPbuxl2KZ455eDFLIUC8oQdZo=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia",
+        "rev": "34cc01941808beae2f6282f00668f1f3ca47aac0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "noctalia",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "claude-desktop": "claude-desktop",
         "home-manager": "home-manager",
         "llm-agents": "llm-agents",
         "nixpkgs": "nixpkgs_3",
+        "noctalia": "noctalia",
         "zen-browser": "zen-browser"
       }
     },

@@ -102,7 +102,7 @@ return { "neovim/nvim-lspconfig",
                 "clangd",
                 "--background-index",
                 "--clang-tidy",
-                "--query-driver=C:/Users/dontin/scoop/apps/gcc/current/bin/gcc.exe",
+                -- "--query-driver=C:/Users/dontin/scoop/apps/gcc/current/bin/gcc.exe",
             },
         })
 

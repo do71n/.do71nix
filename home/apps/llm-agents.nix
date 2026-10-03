@@ -4,6 +4,7 @@
   home.packages = [
     inputs.llm-agents.packages.${pkgs.system}.opencode2
     inputs."claude-desktop".packages.${pkgs.system}.claude-desktop-fhs
+    pkgs.pi-coding-agent
   ];
 
   # OpenCode JSON config

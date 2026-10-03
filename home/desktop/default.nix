@@ -1,16 +1,20 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
-  home.packages = with pkgs; [
-    niri
-    noctalia-shell
-  ];
-
   imports = [
+    inputs.noctalia.homeModules.default
     ./noctalia/default.nix
     ./niri/default.nix
     ./xdg/default.nix
   ];
+
+  home.packages = with pkgs; [
+    niri
+  ];
+
+  programs.noctalia = {
+    enable = true;
+  };
 
   home.pointerCursor = {
     enable = true;

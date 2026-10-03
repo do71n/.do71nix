@@ -1,10 +1,38 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.zsh = {
     enable = true;
     enableCompletion = false;
     dotDir = "${config.xdg.configHome}/zsh";
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" ];
+    };
+
+    plugins = [
+      {
+        name = "zsh-autosuggestions";
+        src = "${pkgs.zsh-autosuggestions}/share/zsh/plugins/zsh-autosuggestions";
+      }
+      {
+        name = "zsh-completions";
+        src = "${pkgs.zsh-completions}/share/zsh/plugins/zsh-completions";
+      }
+      {
+        name = "zsh-history-substring-search";
+        src = "${pkgs.zsh-history-substring-search}/share/zsh/plugins/zsh-history-substring-search";
+      }
+      {
+        name = "zsh-vi-mode";
+        src = "${pkgs.zsh-vi-mode}/share/zsh/plugins/zsh-vi-mode";
+      }
+      {
+        name = "fast-syntax-highlighting";
+        src = "${pkgs.zsh-fast-syntax-highlighting}/share/zsh/plugins/fast-syntax-highlighting";
+      }
+    ];
 
     setOptions = [
       "AUTO_CD"
@@ -25,24 +53,27 @@
     };
 
     envExtra = ''
-            export ZSH="$HOME/.oh-my-zsh"
-            export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump-$HOST-$ZSH_VERSION"
+      export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump-$HOST-$ZSH_VERSION"
+      export DISABLE_AUTO_UPDATE=true
 
       if [[ -n "$SSH_CONNECTION" ]]; then
-              export EDITOR="vim"
-              export VISUAL="vim"
-            else
-              export EDITOR="nvim"
-              export VISUAL="nvim"
-            fi
+        export EDITOR="vim"
+        export VISUAL="vim"
+      else
+        export EDITOR="nvim"
+        export VISUAL="nvim"
+      fi
 
-            [[ -t 0 ]] && export GPG_TTY="$(tty)"
+      [[ -t 0 ]] && export GPG_TTY="$(tty)"
     '';
 
     initContent = ''
       # Enable interactive completion meun selection (tab)
       zstyle ':completion:*' menu select
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+      # Treat / as a word boundary for Zsh word motions
+      WORDCHARS="''${WORDCHARS//\//}"
 
       # Load fzf completion system
       if (( $+commands[fzf] )); then
@@ -53,15 +84,12 @@
       ZSH_CONFIG="$ZDOTDIR/config"
 
       source "$ZSH_CONFIG/options.zsh"
-      source "$ZSH_CONFIG/zplugin.zsh"
       source "$ZSH_CONFIG/fzf.zsh"
       source "$ZSH_CONFIG/bindings.zsh"
       source "$ZSH_CONFIG/aliases.zsh"
     '';
 
     profileExtra = builtins.readFile ./zsh/.zprofile;
-    # envExtra = builtins.readFile ./zsh/.zshenv;
-    # initContent = builtins.readFile ./zsh/.zshrc;
   };
 
   # xdg.configFile."zsh/config".source = ./zsh/config;

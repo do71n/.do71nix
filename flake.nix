@@ -19,6 +19,10 @@
       url = "github:numtide/llm-agents.nix";
     };
 
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+    };
+
     claude-desktop = {
       url = "github:aaddrick/claude-desktop-debian/3755cc45bd6cb4afe0decc736a12ed87577ac324";
     };
@@ -42,6 +46,8 @@
         "discord-unwrapped"
         "obsidian"
         "osu-lazer-bin"
+        "corefonts"
+        "vista-fonts"
       ];
       pkgs = import nixpkgs {
         inherit system;
