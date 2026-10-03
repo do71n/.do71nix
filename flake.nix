@@ -73,11 +73,10 @@
       nixosConfigurations.do71nix = nixpkgs.lib.nixosSystem {
         inherit system; # x86_64-linux
 
-        specialArgs = {
-          inherit inputs unfreePackages;
-        };
-
         modules = [
+          # Reuse the package set configured above, including its unfree allowlist.
+          { nixpkgs.pkgs = pkgs; }
+
           ./hosts/desktop-nix/configuration.nix
 
           home-manager.nixosModules.home-manager

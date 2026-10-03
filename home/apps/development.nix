@@ -35,6 +35,7 @@
     tuicr
     rustup
     tree-sitter
+    nixfmt
 
     # Documentation
     man-db

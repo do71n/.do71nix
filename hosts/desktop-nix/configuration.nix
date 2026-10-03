@@ -1,7 +1,5 @@
 {
-  lib,
   pkgs,
-  unfreePackages,
   ...
 }:
 
@@ -25,7 +23,6 @@
 
   time.timeZone = "Asia/Hong_Kong";
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) unfreePackages;
   i18n.defaultLocale = "ru_RU.UTF-8";
 
   programs.zsh.enable = true;
