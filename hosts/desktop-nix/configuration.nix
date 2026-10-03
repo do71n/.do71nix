@@ -28,6 +28,8 @@
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) unfreePackages;
   i18n.defaultLocale = "ru_RU.UTF-8";
 
+  programs.zsh.enable = true;
+
   users.users.dontin = {
     isNormalUser = true;
     extraGroups = [
@@ -67,11 +69,12 @@
   virtualisation.libvirtd = {
     enable = true;
 
-    qemu = {
-      package = pkgs.qemu_kvm;
-      swtpm.enable = true;
-      ovmf.enable = true;
-    };
+    # NixOS provides the OVMF firmware through QEMU automatically.
+    # qemu = {
+    #   package = pkgs.qemu_kvm;
+    #   swtpm.enable = true;
+    #   ovmf.enable = true;
+    # };
   };
   # Graphical virtual-machine manager
   programs.virt-manager.enable = true;

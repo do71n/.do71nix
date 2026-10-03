@@ -48,6 +48,7 @@
         "osu-lazer-bin"
         "corefonts"
         "vista-fonts"
+        "nvidia-x11"
       ];
       pkgs = import nixpkgs {
         inherit system;
