@@ -1,10 +1,10 @@
 # Work in Progress
 
-System
+# System
 
-OS: Arch Linux
-Compositor: Niri
-Desktop Shell: Noctalia
-Editor: neovim
+OS: NixOS \
+Compositor: Niri \
+Desktop Shell: Noctalia \
+Editor: neovim \
 System fetch: fastfetch
 

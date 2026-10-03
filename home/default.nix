@@ -1,9 +1,17 @@
-{ ... }:
+{ lib, config, ... }:
 
 {
+  home.activation.createVirtualDirectory =
+  lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    mkdir -p \
+      "${config.home.homeDirectory}/virtual"
+  '';
+
   imports = [
-    ./kern/git.nix
-    ./kern/ghostty.nix
-    ./kern/fastfetch/default.nix
+    ./paths.nix
+    ./apps
+    ./fcitx5
+    ./kernel/default.nix
+    ./desktop/default.nix
   ];
 }
