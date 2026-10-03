@@ -13,6 +13,7 @@
     ../../modules/nixos/gaming/steam.nix
   ];
 
+  hardware.cpu.intel.updateMicrocode = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "do71netw"; # Define your hostname.
